@@ -6,6 +6,7 @@ use Http\Client\HttpClient;
 use Http\Client\HttpAsyncClient;
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\RequestFactory;
+use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 
 class SparkPost
@@ -353,10 +354,10 @@ class SparkPost
      *
      * @return SparkPost
      */
-    public function setMessageFactory(RequestFactory $messageFactory)
+    public function setMessageFactory(RequestFactoryInterface $messageFactory)
     {
         $this->messageFactory = $messageFactory;
-
+        
         return $this;
     }
 }
